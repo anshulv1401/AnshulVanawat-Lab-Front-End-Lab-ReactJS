@@ -256,7 +256,7 @@ const ExpenseTracker = () => {
                         /* map through items and display a row for every expense item */
                         items.map(
                             item => (
-                                <tr>
+                                <tr key={item.id}>
                                     <td 
                                     style={item.payeeName === 'Rahul'? 
                                         {fontWeight:'bold', backgroundColor:'#2cab7c'} : 
