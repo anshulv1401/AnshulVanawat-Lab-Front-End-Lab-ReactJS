@@ -115,9 +115,20 @@ const ExpenseTracker = () => {
     const getPayable = () =>{
         const rahulPaid = Math.abs(personalExpense('Rahul'));
         const rameshPaid = Math.abs(personalExpense('Ramesh'));
+        var msg:string;
+        if(rahulPaid === rameshPaid){
+            msg = 'Amt is settled'
+        }
+        else if(rahulPaid < rameshPaid) {
+            msg = 'Rahul has to pay'
+        }
+        else{
+            msg = 'Ramesh has to pay'
+        }
+
         return {
             payable:Math.abs(rahulPaid - rameshPaid) / 2,
-            message: rahulPaid < rameshPaid ? 'Rahul has to pay' : 'Ramesh has to pay'
+            message:msg
         }
     }
 
